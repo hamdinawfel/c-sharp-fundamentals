@@ -10,6 +10,28 @@ namespace CSharp1Exercises
         /// if the numbers are consecutive. For example, if the input is "5-6-7-8-9" or "20-19-18-17-16", 
         /// display a message: "Consecutive"; otherwise, display "Not Consecutive".
         /// </summary>
+        // MY SOLUTION
+        public void mySolution1()
+        {
+            Console.Write("Enter a list numbers separated by a hyphen: ");
+            var input = Console.ReadLine().Split("-");
+            var i = 0;  
+            while (true)
+            {
+                if ((Convert.ToInt32(input[i + 1]) - Convert.ToInt32(input[i])) > 1)
+                {
+                    Console.WriteLine("Not Consictive");
+                    break;
+                }
+                i++;
+                if (i == input.Length - 1)
+                {
+                    Console.WriteLine("Consictive");
+                    break;
+                }
+            }
+        }
+        // SOLUTION
         public void Exercise1()
         {
             Console.Write("Enter a few numbers (eg 1-2-3-4): ");
