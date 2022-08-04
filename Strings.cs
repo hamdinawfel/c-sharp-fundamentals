@@ -62,6 +62,29 @@ namespace CSharp1Exercises
         /// presses Enter without supplying an input, exit immediately; otherwise, check to see if there are 
         /// any duplicates. If so, display "Duplicate" on the console.
         /// </summary>
+        // MY SOLUTION
+        public void mySolution2()
+        {
+             while (true)
+            {
+                Console.Write("Enter a list numbers separated by a hyphen: ");
+                var input = Console.ReadLine();
+                if (String.IsNullOrEmpty(input))
+                {
+                    break;
+                }
+               var numbers = input.Replace("-","");
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    if (numbers.IndexOf(numbers[i]) != numbers.LastIndexOf(numbers[i]))
+                    {
+                        Console.WriteLine("Diplacted");
+                        break;
+                    }
+                }
+            }
+        }
+        // SOLUTION
         public void Exercise2()
         {
             Console.Write("Enter a few numbers (eg 1-2-3-4): ");
