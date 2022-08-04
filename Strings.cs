@@ -119,6 +119,45 @@ namespace CSharp1Exercises
         /// A valid time should be between 00:00 and 23:59. If the time is valid, display "Ok"; otherwise, 
         /// display "Invalid Time". If the user doesn't provide any values, consider it as invalid time. 
         /// </summary>
+        // My SOLUTION
+        public void mySolution3()
+        {
+            static void Main()
+        {
+            Console.Write("Enter a time value in the 24-hour time format (e.g. 19:00): ");
+            var input = Console.ReadLine();
+            if(String.IsNullOrEmpty(input))
+            {
+                Console.WriteLine("Invalid Time");
+                
+            }
+            var valid = ValidateTime(input);
+            if (valid)
+            {
+                Console.WriteLine("OK");
+            }
+            else
+            {
+                Console.WriteLine("Invalid Time");
+            }
+
+        }
+        
+        public static bool ValidateTime(string time)
+        {
+            var valide = false;
+            var minutes = Convert.ToInt32(time.Split(':')[0]);  
+            var seconds = Convert.ToInt32(time.Split(':')[1]);
+
+            if (minutes <= 24 && seconds <= 59)
+            {
+                valide = true;
+            }
+
+                return valide;
+        }
+        }
+        // SOLUTION 3
         public void Exercise3()
         {
             Console.Write("Enter time: ");
