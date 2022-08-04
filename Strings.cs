@@ -199,6 +199,18 @@ namespace CSharp1Exercises
         /// the casing of the input. So if the input is "NUMBER OF STUDENTS", it should still display 
         /// "NumberOfStudents". If the user doesn't supply any words, display "Error".
         /// </summary>
+        public void mySolution4()
+        {
+            Console.Write("Enter few words separated by a space: ");
+            var input = Console.ReadLine().Split(" ");
+            var words = new List<string>();
+            foreach(var word in input)
+            {
+                words.Add(Convert.ToString(word[0]).ToUpper() + word.Substring(1).ToLower());
+            }
+
+            Console.WriteLine(string.Join("", words));
+        }
         public void Exercise4()
         {
             Console.Write("Enter a few words: ");
